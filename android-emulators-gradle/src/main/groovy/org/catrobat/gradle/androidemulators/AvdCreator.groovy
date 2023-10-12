@@ -48,7 +48,6 @@ class AvdCreator {
             avdmanager.addArguments(['create', 'avd', '-f', '-n', avdName])
             avdmanager.addOptionalArguments(settings.sdcardSizeMb, ['-c', "${settings.sdcardSizeMb}M"])
             avdmanager.addArguments(['-k', settings.systemImage])
-            avdmanager.addArguments(['-no-window'])
             avdmanager.addArguments(settings.arguments)
 
             avdmanager.input('no\r\n').directory(avdStore.avdStore).environment(environment).verbose()
