@@ -42,7 +42,8 @@ class AvdCreator {
         checkSettings(settings)
 
         avdStore.store(avdName, settings) {
-            def avdmanager = new CommandBuilder(Utils.joinPaths(sdkDirectory, 'tools', 'bin', 'avdmanager'), '.bat')
+            // TODO maybe another way to build the command
+            def avdmanager = new CommandBuilder(Utils.joinPaths(sdkDirectory,'cmdline-tools','latest', 'bin', 'avdmanager'))
 
             avdmanager.addArguments(['create', 'avd', '-f', '-n', avdName])
             avdmanager.addOptionalArguments(settings.sdcardSizeMb, ['-c', "${settings.sdcardSizeMb}M"])
