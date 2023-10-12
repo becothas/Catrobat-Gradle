@@ -199,7 +199,9 @@ class EmulatorsPluginTasks {
             return false
         }
 
-        return ext.showWindow
+        // TODO Find a way to also not show the ui localy
+        //return ext.showWindow
+        return false
     }
 
     private void reuseRunningOrStartEmulator(String emulatorName, boolean withAnimations) {
