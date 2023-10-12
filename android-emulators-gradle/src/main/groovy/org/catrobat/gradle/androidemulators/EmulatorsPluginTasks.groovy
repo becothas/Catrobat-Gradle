@@ -205,7 +205,7 @@ class EmulatorsPluginTasks {
     }
 
     private void reuseRunningOrStartEmulator(String emulatorName, boolean withAnimations) {
-        def proc
+        Process proc
         def device
 
         try {

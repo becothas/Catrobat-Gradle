@@ -50,9 +50,10 @@ class EmulatorStarter {
         emulator.addOptionalArguments(country, ['-prop', "persist.sys.country=$country"])
         emulator.addOptionalArguments(!showWindow, ['-no-window'])
         emulator.addOptionalArguments(!keepUserData, ['-wipe-data'])
-        emulator.addOptionalArguments(logcat, ['-logcat-output', logcat.absolutePath])
+        emulator.addArguments(['-logcat', '*:v'])
         emulator.addOptionalArguments(verbose, ['-verbose'])
         emulator.addArguments(additionalParameters)
+        emulator.addOptionalArguments(logcat, ['>>', logcat.absolutePath])
 
         emulator.environment(environment).verbose().executeAsynchronously()
     }
