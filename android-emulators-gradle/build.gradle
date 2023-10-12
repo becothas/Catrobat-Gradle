@@ -23,13 +23,13 @@ plugins {
 }
 
 dependencies {
-    compile gradleApi()
-    compile localGroovy()
-    testCompile 'junit:junit:4.12'
+    implementation gradleApi()
+    implementation localGroovy()
+    testImplementation 'junit:junit:4.12'
 }
 
 group 'org.catrobat.gradle.androidemulators'
-version '1.6.2'
+version '2.0.0'
 
 task sourcesJar(type: Jar) {
     classifier = 'sources'

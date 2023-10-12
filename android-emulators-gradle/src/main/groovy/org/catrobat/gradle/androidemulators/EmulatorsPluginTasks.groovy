@@ -218,7 +218,8 @@ class EmulatorsPluginTasks {
 
             def emulatorStarter = lookupEmulator(emulatorName).emulatorParameters
             def logcat = new File(propertyValue('logcatFile', 'logcat.txt'))
-            def verbose =  (boolean) project.properties.getOrDefault('verbose', false)
+            Boolean verbose = project.properties.get('verbose')
+            if(verbose == null) verbose = false
             proc = emulatorStarter.start(emulatorName, sdkDirectory(), determineEnvironment(), showWindow(), logcat, verbose)
 
             try {
@@ -233,7 +234,7 @@ class EmulatorsPluginTasks {
             println("Using device ${device.androidSerial}")
             device.waitForBooted()
         } catch (BootIncompleteException e) {
-            proc?.waitForOrKill(1)
+            //proc?.waitForOrKill(1)
             throw e
         }
 

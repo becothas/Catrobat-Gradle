@@ -19,4 +19,4 @@
 
 rootProject.name = 'catrobat-gradle'
 include 'android-emulators-gradle'
-enableFeaturePreview('STABLE_PUBLISHING')
+// TODO find a replacement for enableFeaturePreview('STABLE_PUBLISHING')

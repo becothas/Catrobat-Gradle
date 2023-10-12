@@ -25,3 +25,7 @@ subprojects {
         mavenCentral()
     }
 }
+wrapper{
+    distributionType = Wrapper.DistributionType.BIN
+    version = 7.2
+}

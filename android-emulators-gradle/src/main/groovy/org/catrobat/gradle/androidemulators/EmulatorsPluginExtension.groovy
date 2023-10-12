@@ -153,7 +153,7 @@ class EmulatorsPluginExtension {
             throw new InvalidUserDataException("Unkown emulator template named [$name]!")
         }
 
-        def templates = emulatorTemplates.get(templateName)?.collect() ?: []
+        List<Closure> templates = emulatorTemplates.get(templateName) ?: []
         templates.add(settings)
         emulatorTemplates[name] = templates as List<Closure>
     }
